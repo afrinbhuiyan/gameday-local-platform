@@ -5,6 +5,7 @@ import Register from '../pages/Register';
 import Login from '../pages/Login';
 import NotFound from '../pages/NotFound';
 import EventDetails from '../pages/EventDetails';
+import Features from '../components/Features';
 
 export const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ export const router = createBrowserRouter([
             {
                 path: "/eventDetails",
                 Component: EventDetails,
+            },
+            {
+                path: "/features",
+                Component: Features
             }
         ]
     }

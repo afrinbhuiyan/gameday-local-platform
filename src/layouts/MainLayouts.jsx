@@ -2,15 +2,16 @@ import React from "react";
 import Home from "../pages/Home";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { Outlet } from "react-router";
 
 const MainLayouts = () => {
   return (
-    <div>
-      <header>
+    <div className="relative min-h-screen">
+      <header  className="sticky top-0 z-50">
         <Navbar></Navbar>
       </header>
       <main>
-        <Home></Home>
+        <Outlet></Outlet>
       </main>
       <footer>
         <Footer></Footer>

@@ -1,12 +1,11 @@
 import React from 'react';
 
-const Login = () => {
+const Features = () => {
     return (
         <div>
-            Login.jsx
-            
+            dsagfdhy
         </div>
     );
 };
 
-export default Login;
+export default Features;

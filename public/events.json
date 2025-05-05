@@ -1,0 +1,33 @@
+[
+    {
+      "id": "1",
+      "thumbnail": "https://i.ibb.co/2c5GdQ6/cricket-event.jpg",
+      "name": "Dhaka Street Cricket",
+      "category": "Cricket",
+      "date": "2025-06-20",
+      "location": "Dhanmondi Playground",
+      "entryFee": "৳100",
+      "description": "A fun, fast-paced cricket event for young talents in Dhaka. Bring your A-game and compete with the best!"
+    },
+    {
+      "id": "2",
+      "thumbnail": "https://i.ibb.co/sqLs7pV/football-event.jpg",
+      "name": "Midnight Football Showdown",
+      "category": "Football",
+      "date": "2025-06-22",
+      "location": "Mirpur Indoor Stadium",
+      "entryFee": "৳150",
+      "description": "Join us for a thrilling 6-a-side football showdown under the lights. Winner takes home medals and cash prize."
+    },
+    {
+      "id": "3",
+      "thumbnail": "https://i.ibb.co/G2z4xPZ/volleyball-event.jpg",
+      "name": "Beach Volleyball Bash",
+      "category": "Volleyball",
+      "date": "2025-06-25",
+      "location": "Cox’s Bazar Beach",
+      "entryFee": "৳200",
+      "description": "Cox’s Bazar's biggest beach volleyball event is back! Enjoy sun, sand, and competitive games."
+    }
+  ]
+  

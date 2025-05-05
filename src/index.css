@@ -1,2 +1,17 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+/* Custom swiper styles */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Oswald:wght@200..700&family=Playwrite+DK+Loopet:wght@100..400&display=swap");
+
+.oswald {
+  font-family: "Oswald", sans-serif;
+}
+
+.dm-sans {
+  font-family: "DM Sans", sans-serif;
+}
+
+.playWrite {
+  font-family: "Playwrite DK Loopet", cursive;
+}
