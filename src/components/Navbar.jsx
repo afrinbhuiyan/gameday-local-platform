@@ -119,7 +119,7 @@ const Navbar = () => {
                         className="h-8 w-8 rounded-full object-cover border-2 border-green-500"
                         src={
                           user.photoURL ||
-                          "https://i.ibb.co/YR5r0yv/default-user.png"
+                          "https://media.istockphoto.com/id/1495088043/vector/user-profile-icon-avatar-or-person-icon-profile-picture-portrait-symbol-default-portrait.jpg?s=170667a&w=0&k=20&c=LPUo_WZjbXXNnF6ok4uQr8I_Zj6WUVnH_FpREg21qaY="
                         }
                         alt={user.displayName || "User"}
                       />

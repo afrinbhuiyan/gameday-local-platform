@@ -1,13 +1,11 @@
-import React, { use, useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router";
 import { IoLogoGoogle } from "react-icons/io";
 import { AuthContext } from "../provider/AuthProvider";
 
 const Register = () => {
-
-    const {registerUser} = useContext(AuthContext);
-
-    console.log(registerUser)
+  const { registerUser, googleLogin, updateUserProfile } =
+    useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,9 +16,19 @@ const Register = () => {
     console.log(name, photoURL, email, password);
 
     registerUser(email, password)
-    .then((result) => {
+      .then((result) => {
         const user = result.user;
-        console.log(user)
+        console.log(user);
+        updateUserProfile({ displayName: name, photoURL: photoURL })
+          .then(() => {
+            console.log("User registered and profile updated");
+          })
+          .catch((error) => {
+            console.error("Registration error:", {
+              code: error.code,
+              message: error.message,
+            });
+          });
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -29,7 +37,11 @@ const Register = () => {
       });
   };
 
-  
+  const handleGoogleLogin = () => {
+    googleLogin().catch((error) => {
+      console.error("Google login error:", error.message);
+    });
+  };
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-t from-[#76b852] to-[#70b66a] font-roboto">
@@ -169,10 +181,13 @@ const Register = () => {
             </div>
           </div>
           <div className="mt-6">
-            <button className="w-full flex items-center justify-center py-3 px-4 rounded-md shadow-sm bg-[#9ce979] hover:bg-[#000000]
-             text-white focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-[#83b66b] transition-colors duration-300">
+            <button
+              onClick={handleGoogleLogin}
+              className="w-full flex items-center justify-center py-3 px-4 rounded-md shadow-sm bg-[#9ce979] hover:bg-[#000000]
+             text-white focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-[#83b66b] transition-colors duration-300"
+            >
               <div className="mr-3 text-2xl">
-              <IoLogoGoogle />
+                <IoLogoGoogle />
               </div>
               <span className="font-medium">Sign in with Google</span>
             </button>
