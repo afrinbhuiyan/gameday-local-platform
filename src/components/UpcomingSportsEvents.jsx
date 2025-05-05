@@ -1,65 +1,9 @@
 import React, { useState } from "react";
 import { FaSearch, FaCalendarAlt, FaMapMarkerAlt, FaRunning, FaTicketAlt } from "react-icons/fa";
+import { Link } from "react-router";
 
-const sportsEvents = [
-  {
-    id: 1,
-    thumbnail: "https://i.ibb.co.com/M5W9ZBHw/636055765699949515-MNI-0731-Stop-The-Violence-Basketball03.webp",
-    name: "Community Basketball Tournament",
-    category: "Basketball",
-    date: "2023-11-18",
-    location: "Downtown Sports Complex, Austin",
-    entryFee: "$10",
-    skillLevel: "Amateur",
-    teamSize: "5v5"
-  },
-  {
-    id: 2,
-    thumbnail: "https://i.ibb.co.com/fzFzdXdR/Untitled-design.jpg",
-    name: "Annual 5K Charity Run",
-    category: "Running",
-    date: "2023-11-25",
-    location: "Riverside Park, Dallas",
-    entryFee: "Free",
-    skillLevel: "All Levels",
-    teamSize: "Individual"
-  },
-  {
-    id: 3,
-    thumbnail: "https://i.ibb.co.com/gZnyWsn0/soccer-tournament-1366x768-fp-mm-fpoff-0-0.webp",
-    name: "Youth Soccer Cup",
-    category: "Soccer",
-    date: "2023-12-02",
-    location: "Regional Soccer Field, Houston",
-    entryFee: "$15",
-    skillLevel: "Under-16",
-    teamSize: "11v11"
-  },
-  {
-    id: 4,
-    thumbnail: "https://i.ibb.co.com/nTqdy4J/avp-facebook-og-image.jpg",
-    name: "Beach Volleyball Open",
-    category: "Volleyball",
-    date: "2023-12-10",
-    location: "Sunset Beach, Galveston",
-    entryFee: "$20 per team",
-    skillLevel: "Intermediate",
-    teamSize: "2v2"
-  },
-  {
-    id: 5,
-    thumbnail: "https://i.ibb.co.com/DH34GF8t/NNAT0808000-Pickleball-Image-03-R2-copy-960x.jpg",
-    name: "Beginner Pickleball Clinic",
-    category: "Pickleball",
-    date: "2023-12-15",
-    location: "Community Rec Center, San Antonio",
-    entryFee: "$5",
-    skillLevel: "Beginner",
-    teamSize: "1v1"
-  }
-];
-
-const UpcomingSportsEvents = () => {
+const UpcomingSportsEvents = ({sportsEvents}) => {
+  console.log(sportsEvents)
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
 
@@ -177,7 +121,9 @@ const SportsEventCard = ({ event }) => {
         {/* Action buttons */}
         <div className="mt-4 flex space-x-2">
           <button className="flex-1 py-2 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors duration-300">
+          <Link to={`/eventDetails/${event.id}`}>
             View Details
+          </Link>
           </button>
           <button className="px-4 py-2 border border-green-600 text-green-600 hover:bg-green-50 rounded-lg transition-colors duration-300">
             Register

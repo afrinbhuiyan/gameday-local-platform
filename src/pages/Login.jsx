@@ -1,16 +1,21 @@
 import React, { useContext } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { IoLogoGoogle } from "react-icons/io";
 import { AuthContext } from "../provider/AuthProvider";
 
 const Login = () => {
   const { loginUser, googleLogin } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    loginUser(email, password).catch((error) => {
+    loginUser(email, password).then((result) => {
+      const user = result.user;  
+      console.log(user);
+      navigate(`${location.state ? location.state : "/"}`);
+    }).catch((error) => {
       console.error("Login error:", error.message);
     });
   };

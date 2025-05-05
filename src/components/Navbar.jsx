@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router";
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { motion } from "framer-motion";
+console.log(motion)
 import {
   FaVolleyballBall,
   FaUser,

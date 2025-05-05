@@ -1,33 +1,57 @@
 [
-    {
-      "id": "1",
-      "thumbnail": "https://i.ibb.co/2c5GdQ6/cricket-event.jpg",
-      "name": "Dhaka Street Cricket",
-      "category": "Cricket",
-      "date": "2025-06-20",
-      "location": "Dhanmondi Playground",
-      "entryFee": "৳100",
-      "description": "A fun, fast-paced cricket event for young talents in Dhaka. Bring your A-game and compete with the best!"
-    },
-    {
-      "id": "2",
-      "thumbnail": "https://i.ibb.co/sqLs7pV/football-event.jpg",
-      "name": "Midnight Football Showdown",
-      "category": "Football",
-      "date": "2025-06-22",
-      "location": "Mirpur Indoor Stadium",
-      "entryFee": "৳150",
-      "description": "Join us for a thrilling 6-a-side football showdown under the lights. Winner takes home medals and cash prize."
-    },
-    {
-      "id": "3",
-      "thumbnail": "https://i.ibb.co/G2z4xPZ/volleyball-event.jpg",
-      "name": "Beach Volleyball Bash",
-      "category": "Volleyball",
-      "date": "2025-06-25",
-      "location": "Cox’s Bazar Beach",
-      "entryFee": "৳200",
-      "description": "Cox’s Bazar's biggest beach volleyball event is back! Enjoy sun, sand, and competitive games."
-    }
-  ]
-  
+  {
+    "id": 1,
+    "thumbnail": "https://i.ibb.co.com/M5W9ZBHw/636055765699949515-MNI-0731-Stop-The-Violence-Basketball03.webp",
+    "name": "Community Basketball Tournament",
+    "category": "Basketball",
+    "date": "2023-11-18",
+    "location": "Downtown Sports Complex, Austin",
+    "entryFee": "$10",
+    "skillLevel": "Amateur",
+    "teamSize": "5v5"
+  },
+  {
+    "id": 2,
+    "thumbnail": "https://i.ibb.co.com/fzFzdXdR/Untitled-design.jpg",
+    "name": "Annual 5K Charity Run",
+    "category": "Running",
+    "date": "2023-11-25",
+    "location": "Riverside Park, Dallas",
+    "entryFee": "Free",
+    "skillLevel": "All Levels",
+    "teamSize": "Individual"
+  },
+  {
+    "id": 3,
+    "thumbnail": "https://i.ibb.co.com/gZnyWsn0/soccer-tournament-1366x768-fp-mm-fpoff-0-0.webp",
+    "name": "Youth Soccer Cup",
+    "category": "Soccer",
+    "date": "2023-12-02",
+    "location": "Regional Soccer Field, Houston",
+    "entryFee": "$15",
+    "skillLevel": "Under-16",
+    "teamSize": "11v11"
+  },
+  {
+    "id": 4,
+    "thumbnail": "https://i.ibb.co.com/nTqdy4J/avp-facebook-og-image.jpg",
+    "name": "Beach Volleyball Open",
+    "category": "Volleyball",
+    "date": "2023-12-10",
+    "location": "Sunset Beach, Galveston",
+    "entryFee": "$20 per team",
+    "skillLevel": "Intermediate",
+    "teamSize": "2v2"
+  },
+  {
+    "id": 5,
+    "thumbnail": "https://i.ibb.co.com/DH34GF8t/NNAT0808000-Pickleball-Image-03-R2-copy-960x.jpg",
+    "name": "Beginner Pickleball Clinic",
+    "category": "Pickleball",
+    "date": "2023-12-15",
+    "location": "Community Rec Center, San Antonio",
+    "entryFee": "$5",
+    "skillLevel": "Beginner",
+    "teamSize": "1v1"
+  }
+]
