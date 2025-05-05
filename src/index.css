@@ -15,3 +15,93 @@
 .playWrite {
   font-family: "Playwrite DK Loopet", cursive;
 }
+
+@tailwind utilities;
+
+@layer components {
+  /* Animation for floating bubbles */
+  .animate-float {
+    animation: float 20s infinite linear;
+  }
+  
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+  
+  .animation-delay-3000 {
+    animation-delay: 3s;
+  }
+  
+  .animation-delay-7000 {
+    animation-delay: 7s;
+  }
+  
+  .animation-delay-15000 {
+    animation-delay: 15s;
+  }
+  
+  .animation-delay-11000 {
+    animation-delay: 11s;
+  }
+  
+  .animation-duration-17000 {
+    animation-duration: 17s;
+  }
+  
+  .animation-duration-22000 {
+    animation-duration: 22s;
+  }
+  
+  .animation-duration-40000 {
+    animation-duration: 40s;
+  }
+
+  /* Keyframes for floating animation */
+  @keyframes float {
+    0% {
+      transform: translateY(0) rotate(0deg);
+    }
+    100% {
+      transform: translateY(-700px) rotate(600deg);
+    }
+  }
+
+  /* Custom checkbox styling */
+  .form-checkbox {
+    position: relative;
+    appearance: none;
+    background: transparent;
+    border: 1px solid white;
+  }
+
+  .form-checkbox:checked {
+    background: #8dc26f;
+  }
+
+  .form-checkbox:checked::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0.5rem;
+    height: 0.25rem;
+    border: solid white;
+    border-width: 0 0 2px 2px;
+    transform: translate(-50%, -60%) rotate(-45deg);
+    animation: ripple 0.4s ease;
+  }
+
+  @keyframes ripple {
+    50% {
+      border-left-color: white;
+    }
+    100% {
+      border-bottom-color: white;
+      border-left-color: white;
+    }
+  }
+}
