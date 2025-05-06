@@ -43,7 +43,6 @@ const Navbar = () => {
           }
           onClick={() => setMobileMenuOpen(false)}
         >
-          <FaHome className="text-lg" />
           <span>Home</span>
         </NavLink>
       </li>
@@ -59,8 +58,37 @@ const Navbar = () => {
           }
           onClick={() => setMobileMenuOpen(false)}
         >
-          <FaHome className="text-lg" />
           <span>Features</span>
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/news"
+          className={({ isActive }) =>
+            `flex items-center gap-2 py-5 px-3 transition-all ${
+              isActive
+                ? "bg-[#93e77a] text-black"
+                : "text-white hover:bg-[#93e77a] hover:text-black"
+            }`
+          }
+          onClick={() => setMobileMenuOpen(false)}
+        >
+          <span>News</span>
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/dashboard"
+          className={({ isActive }) =>
+            `flex items-center gap-2 py-5 px-3 transition-all ${
+              isActive
+                ? "bg-[#93e77a] text-black"
+                : "text-white hover:bg-[#93e77a] hover:text-black"
+            }`
+          }
+          onClick={() => setMobileMenuOpen(false)}
+        >
+          <span>Dashboard</span>
         </NavLink>
       </li>
       <li>
@@ -75,7 +103,6 @@ const Navbar = () => {
           }
           onClick={() => setMobileMenuOpen(false)}
         >
-          <FaUser className="text-lg" />
           <span>My Profile</span>
         </NavLink>
       </li>

@@ -1,11 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router";
 import { IoLogoGoogle } from "react-icons/io";
 import { AuthContext } from "../provider/AuthProvider";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
   const { registerUser, googleLogin, updateUserProfile } =
     useContext(AuthContext);
+
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePassword = () => {
+    setShowPassword(!showPassword);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -121,15 +128,26 @@ const Register = () => {
                 </span>
               </div>
 
-              <div>
+              <div className="relative">
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   name="password"
                   placeholder="Password"
                   required
-                  className="w-full px-4 py-3 bg-transparent border border-white border-opacity-40 text-white placeholder-white font-light focus:outline-none focus:border-opacity-100 transition-all duration-300 bg-gradient-to-b from-transparent from-96% to-white to-4% bg-size-100 bg-no-repeat bg-position-[-800px] focus:bg-position-0 peer my-6"
+                  className="w-full px-4 py-3 bg-transparent border border-white border-opacity-40 text-white placeholder-white font-light focus:outline-none focus:border-opacity-100
+                   transition-all duration-300 bg-gradient-to-b from-transparent from-96% to-white to-4% bg-size-100 bg-no-repeat bg-position-[-800px] focus:bg-position-0 peer my-6"
                 />
-                <span className="text-xs text-white opacity-0 peer-focus:opacity-70 peer-valid:opacity-70 -mt-8 block h-0 overflow-hidden peer-focus:h-auto peer-focus:mt-1 peer-valid:h-auto peer-valid:mt-1 transition-all duration-300 transform peer-focus:-translate-y-6 peer-valid:-translate-y-6">
+                <div
+                  onClick={togglePassword}
+                  className="absolute right-4 top-[39px] cursor-pointer text-white opacity-70 hover:opacity-100"
+                >
+                  {showPassword ? (
+                    <FaEye size={20} />
+                  ) : (
+                    <FaEyeSlash size={20} />
+                  )}
+                </div>
+                <span className="text-xs text-white opacity-0 peer-focus:opacity-70 peer-valid:opacity-70 -mt-8 block h-0 overflow-hidden peer-focus:h-auto peer-focus:mt-1 peer-valid:h-auto       peer-valid:mt-1 transition-all duration-300 transform peer-focus:-translate-y-6 peer-valid:-translate-y-6">
                   Password
                 </span>
               </div>
