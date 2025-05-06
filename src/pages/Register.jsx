@@ -28,7 +28,7 @@ const Register = () => {
         console.log(user);
         updateUserProfile({ displayName: name, photoURL: photoURL })
           .then(() => {
-            console.log("User registered and profile updated");
+            alert("User registered and profile updated");
           })
           .catch((error) => {
             console.error("Registration error:", {

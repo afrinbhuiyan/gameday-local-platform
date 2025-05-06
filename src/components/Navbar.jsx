@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router";
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { motion } from "framer-motion";
-console.log(motion)
+console.log(motion);
 import {
   FaVolleyballBall,
   FaUser,
@@ -122,7 +122,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-black top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container lg:px-24 mx-auto px-4 sm:px-6">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-2">
@@ -133,16 +133,14 @@ const Navbar = () => {
             </Link>
           </div>
 
-          <ul className="hidden md:flex items-center ml-10">
-            {navLinks}
-          </ul>
+          <ul className="hidden md:flex items-center ml-10">{navLinks}</ul>
 
           <div className="flex items-center">
             {user ? (
               <>
                 <div className="hidden md:block relative group">
                   <button className="flex items-center space-x-2 focus:outline-none">
-                    <div className="relative">
+                    <div className="relative w-8">
                       <img
                         className="h-8 w-8 rounded-full object-cover border-2 border-green-500"
                         src={
@@ -182,6 +180,16 @@ const Navbar = () => {
                     </button>
                   </div>
                 </div>
+
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={handleLogout}
+                  className="bg-[#9ce979] hover:bg-[#83b66b] font-bold py-2 px-6 rounded-full text-sm transition-all duration-300 dm-sans lg:flex items-center ml-3 hidden"
+                >
+                  <FaSignOutAlt className="mr-2" />
+                  Sign out
+                </motion.button>
 
                 {/* Mobile menu button */}
                 <button

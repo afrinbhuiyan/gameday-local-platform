@@ -1,37 +1,53 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { IoLogoGoogle } from "react-icons/io";
 import { AuthContext } from "../provider/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
-  const { loginUser, googleLogin } = useContext(AuthContext);
+  const { loginUser, googleLogin, resetPassword } = useContext(AuthContext);
   const navigate = useNavigate();
+  const emailRef = useRef();
 
-   const [showPassword, setShowPassword] = useState(false);
-  
-    const togglePassword = () => {
-      setShowPassword(!showPassword);
-    };
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePassword = () => {
+    setShowPassword(!showPassword);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    loginUser(email, password).then((result) => {
-      const user = result.user;  
-      console.log(user);
-      navigate(`${location.state ? location.state : "/"}`);
-    }).catch((error) => {
-      console.error("Login error:", error.message);
+    loginUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        navigate(`${location.state ? location.state : "/"}`);
+      })
+      .catch((error) => {
+        console.error("Login error:", error.message);
+      });
+  };
+
+  const handleGoogleLogin = () => {
+    googleLogin().catch((error) => {
+      console.error("Google login error:", error.message);
     });
   };
 
-    const handleGoogleLogin = () => {
-      googleLogin().catch((error) => {
-        console.error("Google login error:", error.message);
+  const handleForgotPassword = () => {
+    // setError("")
+    console.log(emailRef.current.value);
+    const email = emailRef.current.value;
+    resetPassword(email)
+      .then(() => {
+        alert("fgttr6gtuye47y8hyt");
+      })
+      .catch((error) => {
+        // alert(error.message);
       });
-    };
+  };
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-t from-[#76b852] to-[#70b66a] font-roboto">
@@ -76,6 +92,7 @@ const Login = () => {
                 <input
                   type="email"
                   name="email"
+                  ref={emailRef}
                   placeholder="Email"
                   required
                   className="w-full px-4 py-3 bg-transparent border border-white border-opacity-40 text-white placeholder-white font-light focus:outline-none focus:border-opacity-100 transition-all duration-300 bg-gradient-to-b from-transparent from-96% to-white to-4% bg-size-100 bg-no-repeat bg-position-[-800px] peer"
@@ -106,8 +123,12 @@ const Login = () => {
                 <span className="text-xs text-white opacity-0 peer-focus:opacity-70 peer-valid:opacity-70 -mt-8 block h-0 overflow-hidden peer-focus:h-auto peer-focus:mt-1 peer-valid:h-auto peer-valid:mt-1 transition-all duration-300 transform peer-focus:-translate-y-6 peer-valid:-translate-y-6">
                   Password
                 </span>
+                <p className="text-white hover:underline font-medium text-sm mt-5">
+                  <a onClick={handleForgotPassword} to="/forgot-password">
+                    Forgot password?
+                  </a>
+                </p>
               </div>
-
               <button
                 type="submit"
                 className="w-full py-3 px-4 bg-[#9ce979] hover:bg-[#83b66b] text-white font-medium rounded-md transition-colors duration-500 border border-none focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 uppercase tracking-wider"
@@ -141,7 +162,7 @@ const Login = () => {
           </div>
           <div className="mt-6">
             <button
-                onClick={handleGoogleLogin}
+              onClick={handleGoogleLogin}
               className="w-full flex items-center justify-center py-3 px-4 rounded-md shadow-sm bg-[#9ce979] hover:bg-[#000000] text-white focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-[#83b66b] transition-colors duration-300"
             >
               <div className="mr-3 text-2xl">
