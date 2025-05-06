@@ -33,7 +33,6 @@ const EventDetails = () => {
     setIsSubmitted(true);
 
     e.target.reset();
-    
     setTimeout(() => setIsSubmitted(false), 3000);
   };
 

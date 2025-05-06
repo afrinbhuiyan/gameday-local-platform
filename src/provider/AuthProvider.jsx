@@ -19,7 +19,7 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  console.log(user)
+  console.log(user);
 
   const googleProvider = new GoogleAuthProvider();
 
@@ -44,7 +44,10 @@ const AuthProvider = ({ children }) => {
   };
 
   const updateUserProfile = (profile) => {
-    return updateProfile(auth.currentUser, profile);
+    return updateProfile(auth.currentUser, profile).then(() => {
+      setUser({ ...auth.currentUser });
+      return true;
+    });
   };
 
   const resetPassword = (email) => {
