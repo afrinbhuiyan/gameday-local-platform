@@ -7,6 +7,7 @@ import NotFound from "../pages/NotFound";
 import EventDetails from "../pages/EventDetails";
 import Features from "../components/Features";
 import PrivateRoute from "../provider/PrivateRoute";
+import Profile from "../pages/Profile";
 
 export const router = createBrowserRouter([
   {
@@ -30,11 +31,17 @@ export const router = createBrowserRouter([
       },
       {
         path: "/eventDetails/:id",
-        element: <PrivateRoute><EventDetails></EventDetails></PrivateRoute>
+        element: <PrivateRoute><EventDetails></EventDetails></PrivateRoute>,
+        loader: () => fetch("../events.json"),
+        hydrateFallbackElement: <p>Loading...</p>,
       },
       {
         path: "/features",
         Component: Features,
+      },
+      {
+        path: "/profile",
+        Component: Profile,
       },
     ],
   },
