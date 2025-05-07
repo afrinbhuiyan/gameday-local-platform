@@ -4,6 +4,7 @@ import { IoLogoGoogle } from "react-icons/io";
 import { AuthContext } from "../provider/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const { registerUser, googleLogin, updateUserProfile } =
@@ -66,22 +67,25 @@ const Register = () => {
         const errorMessage = error.message;
         setError(errorMessage);
         toast.error("Registration failed. Please check your credentials.");
-        setLoading(false);        
+        setLoading(false);
       });
   };
 
   const handleGoogleLogin = () => {
     googleLogin()
-    .then(() => {
-      navigate(location?.state || "/");
-    })
-    .catch((error) => {
-      console.log("Google login error:", error.message);
-    });
+      .then(() => {
+        navigate(location?.state || "/");
+      })
+      .catch((error) => {
+        console.log("Google login error:", error.message);
+      });
   };
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-t from-[#76b852] to-[#70b66a] font-roboto">
+      <Helmet>
+        <title>GameDay | Register</title>
+      </Helmet>
       <ul className="absolute top-0 left-0 w-full h-full z-0">
         {[...Array(10)].map((_, i) => (
           <li
@@ -119,11 +123,11 @@ const Register = () => {
         <div className="max-w-md mx-auto bg-[#0505052d] bg-opacity-10 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden">
           <div className="p-6 sm:p-8">
             <p>
-            {error && (
-              <div className="text-red-600 mb-5 rounded-lg text-sm">
-                {error}
-              </div>
-            )}
+              {error && (
+                <div className="text-red-600 mb-5 rounded-lg text-sm">
+                  {error}
+                </div>
+              )}
             </p>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
@@ -208,7 +212,7 @@ const Register = () => {
                 className="w-full py-3 px-4 bg-[#9ce979] hover:bg-[#83b66b] text-white font-medium rounded-md transition-colors duration-500 border border-none
                 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 uppercase tracking-wider"
               >
-                 {loading ? 'Processing...' : 'SIGNUP'}
+                {loading ? "Processing..." : "SIGNUP"}
               </button>
             </form>
 

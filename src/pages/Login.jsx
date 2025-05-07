@@ -4,6 +4,7 @@ import { IoLogoGoogle } from "react-icons/io";
 import { AuthContext } from "../provider/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { loginUser, googleLogin, resetPassword } = useContext(AuthContext);
@@ -49,16 +50,23 @@ const Login = () => {
     const email = emailRef.current.value;
     resetPassword(email)
       .then(() => {
-        toast.success(`A password reset link has been sent to ${email}. Please check your inbox.`);
+        toast.success(
+          `A password reset link has been sent to ${email}. Please check your inbox.`
+        );
       })
       .catch((error) => {
         console.log("Password reset error:", error.message);
-        toast.error("Failed to send reset email. Please check the email address and try again.");
+        toast.error(
+          "Failed to send reset email. Please check the email address and try again."
+        );
       });
   };
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-t from-[#76b852] to-[#70b66a] font-roboto">
+      <Helmet>
+        <title>GameDay | Login</title>
+      </Helmet>
       <ul className="absolute top-0 left-0 w-full h-full z-0">
         {[...Array(10)].map((_, i) => (
           <li
@@ -132,7 +140,11 @@ const Login = () => {
                   Password
                 </span>
                 <p className="text-white hover:underline font-medium text-sm mt-5">
-                  <a onClick={handleForgotPassword} to="/forgot-password" className="cursor-pointer">
+                  <a
+                    onClick={handleForgotPassword}
+                    to="/forgot-password"
+                    className="cursor-pointer"
+                  >
                     Forgot password?
                   </a>
                 </p>

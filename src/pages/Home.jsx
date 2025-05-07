@@ -6,19 +6,21 @@ import { useLoaderData } from "react-router";
 import Testimonials from "./Testimonials";
 import WorkWithUs from "../components/WorkWithUs";
 import Features from "../components/Features";
-
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   const data = useLoaderData();
-  // const swiperRef = useRef(null);
+  const featuredEventsCount = data?.length || 0;
+  console.log(typeof featuredEventsCount);
 
   return (
     <div className="overflow-hidden">
+      <Helmet>
+      <title>GameDay | Home</title>
+      </Helmet>
       <Hero />
       <UpcomingSportsEvents sportsEvents={data} />
-
       <Features></Features>
-
       <Testimonials />
       <WorkWithUs />
     </div>

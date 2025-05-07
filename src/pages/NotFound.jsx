@@ -6,11 +6,14 @@ import notFound from "../assets/notFound.svg";
 import { MdOutlineKeyboardBackspace } from "react-icons/md";
 import { IoIosHome } from "react-icons/io";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 
 const NotFound = () => {
   return (
     <div className="min-h-screen bg-[#e6e6e6] flex flex-col items-center justify-center p-4 font-sans">
-      {/* Main Content Container */}
+      <Helmet>
+        <title>GameDay | Error</title>
+      </Helmet>
       <div className="flex md:flex-row flex-col gap-10 items-center ">
         <div>
           <h1 className="text-5xl font-bold text-[#080431]">So Sorry!</h1>

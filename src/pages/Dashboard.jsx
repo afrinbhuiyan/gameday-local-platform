@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link } from "react-router";
 import { PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip } from "recharts";
+import { Helmet } from "react-helmet-async";
 
 const Dashboard = () => {
   const { user } = useContext(AuthContext);
@@ -33,6 +34,9 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: colors.background }}>
+      <Helmet>
+        <title>GameDay | Dashboard</title>
+      </Helmet>
       <div className="max-w-7xl mx-auto p-4 md:p-8">
         <div className="mb-10">
           <h1 className="text-3xl font-bold" style={{ color: colors.primaryDark }}>
