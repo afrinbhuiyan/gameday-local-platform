@@ -9,6 +9,7 @@ import Features from "../components/Features";
 import PrivateRoute from "../provider/PrivateRoute";
 import Profile from "../pages/Profile";
 import Dashboard from "../pages/Dashboard";
+import ForgotPassword from "../pages/ForgotPassword";
 
 export const router = createBrowserRouter([
   {
@@ -32,7 +33,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/eventDetails/:id",
-        element: <PrivateRoute><EventDetails></EventDetails></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <EventDetails></EventDetails>
+          </PrivateRoute>
+        ),
         loader: () => fetch("../events.json"),
         hydrateFallbackElement: <p>Loading...</p>,
       },
@@ -42,13 +47,25 @@ export const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <PrivateRoute><Profile></Profile></PrivateRoute>
+        element: (
+          <PrivateRoute>
+            <Profile></Profile>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/dashboard",
-        element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <Dashboard></Dashboard>
+          </PrivateRoute>
+        ),
         loader: () => fetch("../events.json"),
         hydrateFallbackElement: <p>Loading...</p>,
+      },
+      {
+        path: "/forgotPassword",
+        Component: ForgotPassword,
       },
     ],
   },

@@ -3,11 +3,11 @@ import { Link, useLocation, useNavigate } from "react-router";
 import { IoLogoGoogle } from "react-icons/io";
 import { AuthContext } from "../provider/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 import { Helmet } from "react-helmet-async";
 
 const Login = () => {
-  const { loginUser, googleLogin, resetPassword } = useContext(AuthContext);
+  const { loginUser, googleLogin } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   console.log(location);
@@ -45,22 +45,22 @@ const Login = () => {
       });
   };
 
-  const handleForgotPassword = () => {
-    console.log(emailRef.current.value);
-    const email = emailRef.current.value;
-    resetPassword(email)
-      .then(() => {
-        toast.success(
-          `A password reset link has been sent to ${email}. Please check your inbox.`
-        );
-      })
-      .catch((error) => {
-        console.log("Password reset error:", error.message);
-        toast.error(
-          "Failed to send reset email. Please check the email address and try again."
-        );
-      });
-  };
+  // const handleForgotPassword = () => {
+  //   console.log(emailRef.current.value);
+  //   const email = emailRef.current.value;
+  //   resetPassword(email)
+  //     .then(() => {
+  //       toast.success(
+  //         `A password reset link has been sent to ${email}. Please check your inbox.`
+  //       );
+  //     })
+  //     .catch((error) => {
+  //       console.log("Password reset error:", error.message);
+  //       toast.error(
+  //         "Failed to send reset email. Please check the email address and try again."
+  //       );
+  //     });
+  // };
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-t from-[#76b852] to-[#70b66a] font-roboto">
@@ -140,13 +140,12 @@ const Login = () => {
                   Password
                 </span>
                 <p className="text-white hover:underline font-medium text-sm mt-5">
-                  <a
-                    onClick={handleForgotPassword}
-                    to="/forgot-password"
+                  <Link
+                    to="/forgotPassword"
                     className="cursor-pointer"
                   >
                     Forgot password?
-                  </a>
+                  </Link>
                 </p>
               </div>
               <button
