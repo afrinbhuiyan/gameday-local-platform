@@ -1,14 +1,20 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { IoLogoGoogle } from "react-icons/io";
 import { AuthContext } from "../provider/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const { registerUser, googleLogin, updateUserProfile } =
     useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location);
 
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const togglePassword = () => {
     setShowPassword(!showPassword);
@@ -16,37 +22,61 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    setError("");
+
     const name = e.target.name.value;
     const photoURL = e.target.photoURL.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
     console.log(name, photoURL, email, password);
 
+    if (password.length < 6) {
+      toast.error("Profile update failed. Please try again.");
+      return setError("Password should be at least 6 characters");
+    }
+
+    const passwordRegExp = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
+
+    if (!passwordRegExp.test(password)) {
+      toast.error("Profile update failed. Please try again.");
+      return setError(
+        "Password must include a number, lowercase, and uppercase letter."
+      );
+    }
+    setLoading(true);
     registerUser(email, password)
       .then((result) => {
         const user = result.user;
+        setLoading(false);
         console.log(user);
         updateUserProfile({ displayName: name, photoURL: photoURL })
           .then(() => {
-            alert("User registered and profile updated");
+            toast.success(`Welcome, ${name}! Your account has been created.`);
+            navigate("/");
           })
           .catch((error) => {
-            console.error("Registration error:", {
-              code: error.code,
-              message: error.message,
-            });
+            const errorMessage = error.message;
+            setError(errorMessage);
+            toast.error("Profile update failed. Please try again.");
+            setLoading(false);
           });
       })
       .catch((error) => {
         const errorMessage = error.message;
-        const errorCode = error.code;
-        console.log(errorMessage, errorCode);
+        setError(errorMessage);
+        toast.error("Registration failed. Please check your credentials.");
+        setLoading(false);        
       });
   };
 
   const handleGoogleLogin = () => {
-    googleLogin().catch((error) => {
-      console.error("Google login error:", error.message);
+    googleLogin()
+    .then(() => {
+      navigate(location?.state || "/");
+    })
+    .catch((error) => {
+      console.log("Google login error:", error.message);
     });
   };
 
@@ -88,6 +118,13 @@ const Register = () => {
 
         <div className="max-w-md mx-auto bg-[#0505052d] bg-opacity-10 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden">
           <div className="p-6 sm:p-8">
+            <p>
+            {error && (
+              <div className="text-red-600 mb-5 rounded-lg text-sm">
+                {error}
+              </div>
+            )}
+            </p>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <input
@@ -171,7 +208,7 @@ const Register = () => {
                 className="w-full py-3 px-4 bg-[#9ce979] hover:bg-[#83b66b] text-white font-medium rounded-md transition-colors duration-500 border border-none
                 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 uppercase tracking-wider"
               >
-                SIGNUP
+                 {loading ? 'Processing...' : 'SIGNUP'}
               </button>
             </form>
 

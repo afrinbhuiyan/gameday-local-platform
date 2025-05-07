@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FaRunning, FaTrophy, FaUsers, FaCalendarAlt, FaChartLine, FaTicketAlt } from "react-icons/fa";
+import { Link } from "react-router";
 
 const Features = () => {
   const features = [
@@ -101,7 +102,7 @@ const Features = () => {
             whileTap={{ scale: 0.95 }}
             className="px-8 py-3 bg-white text-emerald-600 font-bold rounded-full shadow-md hover:shadow-lg transition-all"
           >
-            Sign Up Now
+            <Link to={"/register"}>Sign Up Now</Link>
           </motion.button>
         </motion.div>
       </div>

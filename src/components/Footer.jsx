@@ -1,14 +1,13 @@
 import React from "react";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import { Link } from "react-router";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Footer = () => {
   const handleSubscribe = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
-    // Add your subscription logic here
     console.log("Subscribed with:", email);
     toast.success("Subscribed successfully!");
     e.target.reset();
