@@ -53,5 +53,16 @@
     "entryFee": "$5",
     "skillLevel": "Beginner",
     "teamSize": "1v1"
+  },
+  {
+    "id": 6,
+    "thumbnail": "https://i.ibb.co.com/vBq9QXt/table-tennis.jpg",
+    "name": "Texas Table Tennis Showdown",
+    "category": "Table Tennis",
+    "date": "2023-12-20",
+    "location": "Lone Star Sports Arena, El Paso",
+    "entryFee": "$8",
+    "skillLevel": "Advanced",
+    "teamSize": "Singles"
   }
 ]

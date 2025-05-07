@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Link } from "react-router";
 import { FaCalendarAlt, FaMapMarkerAlt, FaUsers } from "react-icons/fa";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
+console.log(motion)
 
 const eventSlides = [
   {

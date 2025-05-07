@@ -37,7 +37,6 @@ const Login = () => {
   };
 
   const handleForgotPassword = () => {
-    // setError("")
     console.log(emailRef.current.value);
     const email = emailRef.current.value;
     resetPassword(email)
@@ -45,7 +44,7 @@ const Login = () => {
         alert("fgttr6gtuye47y8hyt");
       })
       .catch((error) => {
-        // alert(error.message);
+        console.log(error.message);
       });
   };
 
