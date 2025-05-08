@@ -8,7 +8,8 @@
     "location": "Downtown Sports Complex, Austin",
     "entryFee": "$10",
     "skillLevel": "Amateur",
-    "teamSize": "5v5"
+    "teamSize": "5v5",
+    "description": "Join Austin's biggest community basketball tournament! This exciting one-day event is designed for amateur players who love competition and camaraderie. Each team is guaranteed at least three games, and the top teams will advance to the playoffs. Enjoy a day filled with high-energy matches, free refreshments, live DJ entertainment, and opportunities to meet other basketball enthusiasts. All proceeds go toward supporting local youth sports programs, so you’ll be playing for a good cause."
   },
   {
     "id": 2,
@@ -19,7 +20,8 @@
     "location": "Riverside Park, Dallas",
     "entryFee": "Free",
     "skillLevel": "All Levels",
-    "teamSize": "Individual"
+    "teamSize": "Individual",
+    "description": "Lace up your running shoes for the Annual 5K Charity Run in scenic Riverside Park, Dallas! Open to runners and walkers of all ages and abilities, this event supports childhood cancer research. The race features a professionally timed course, a fun kids’ run, free t-shirts for all participants, and a lively post-race festival with music and food. While registration is free, donations are encouraged to support the cause. Bring your family, your friends, or just yourself and help make a difference!"
   },
   {
     "id": 3,
@@ -30,7 +32,8 @@
     "location": "Regional Soccer Field, Houston",
     "entryFee": "$15",
     "skillLevel": "Under-16",
-    "teamSize": "11v11"
+    "teamSize": "11v11",
+    "description": "Compete in the region’s top youth soccer event! The Youth Soccer Cup is a two-day tournament for under-16 competitive teams. Certified referees oversee all matches, ensuring fair and exciting play. College scouts will be in attendance, giving talented players a chance to shine. Each team is guaranteed group-stage play with the chance to advance to the knockout rounds. The tournament ends with a grand awards ceremony recognizing team and individual excellence. Don’t miss this opportunity to test your skills on a big stage!"
   },
   {
     "id": 4,
@@ -41,7 +44,8 @@
     "location": "Sunset Beach, Galveston",
     "entryFee": "$20 per team",
     "skillLevel": "Intermediate",
-    "teamSize": "2v2"
+    "teamSize": "2v2",
+    "description": "Sun, sand, and spikes! The Beach Volleyball Open is a high-energy 2v2 tournament for intermediate-level players looking for fun and competition. Hosted on the picturesque Sunset Beach in Galveston, this event includes multiple divisions, beachside food trucks, free sunscreen stations, and live music. The day wraps up with a beach bonfire celebration. Whether you're playing to win or just soaking up the sun, this tournament promises a full day of beach vibes and volleyball action."
   },
   {
     "id": 5,
@@ -52,7 +56,8 @@
     "location": "Community Rec Center, San Antonio",
     "entryFee": "$5",
     "skillLevel": "Beginner",
-    "teamSize": "1v1"
+    "teamSize": "1v1",
+    "description": "New to pickleball? Join our beginner-friendly clinic and learn everything you need to know about the fastest growing sport in America. Certified instructors will guide you through basic techniques, rules, and strategies. The session includes hands-on drills, round robin play, and social games. Equipment is provided, and all participants receive a 20% discount on pickleball paddles. Whether you’re looking for a new hobby or just some active fun, this is the perfect place to start!"
   },
   {
     "id": 6,
@@ -63,6 +68,7 @@
     "location": "Lone Star Sports Arena, El Paso",
     "entryFee": "$8",
     "skillLevel": "Advanced",
-    "teamSize": "Singles"
+    "teamSize": "Singles",
+    "description": "Step into the spotlight at the Texas Table Tennis Showdown! Designed for serious players, this USATT-sanctioned singles event offers the chance to earn rating points and win cash prizes. Play on professional-grade Butterfly tables and face off against top-ranked competitors. The arena will also host an equipment vendor showcase, giving you access to the latest gear. Whether you're chasing trophies or rankings, this elite competition is where champions are made."
   }
 ]
