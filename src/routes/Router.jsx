@@ -11,6 +11,7 @@ import Profile from "../pages/Profile";
 import Dashboard from "../pages/Dashboard";
 import ForgotPassword from "../pages/ForgotPassword";
 import { ClipLoader } from "react-spinners";
+import { Helmet } from "react-helmet-async";
 
 export const router = createBrowserRouter([
   {
@@ -42,6 +43,7 @@ export const router = createBrowserRouter([
         path: "/eventDetails/:id",
         element: (
           <PrivateRoute>
+            <Helmet><title>GameDay | EventDetails</title></Helmet>
             <EventDetails></EventDetails>
           </PrivateRoute>
         ),
@@ -56,7 +58,8 @@ export const router = createBrowserRouter([
       },
       {
         path: "/features",
-        Component: Features,
+        // Component: Features,
+        element: <div><Helmet><title>GameDay | Features</title></Helmet><Features></Features></div>
       },
       {
         path: "/profile",
