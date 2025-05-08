@@ -10,9 +10,6 @@ import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   const data = useLoaderData();
-  const featuredEventsCount = data?.length || 0;
-  console.log(typeof featuredEventsCount);
-
   return (
     <div className="overflow-hidden">
       <Helmet>

@@ -6,7 +6,6 @@ import {
   FaVolleyballBall,
   FaUser,
   FaSignOutAlt,
-  FaHome,
   FaBars,
 } from "react-icons/fa";
 import { useState } from "react";

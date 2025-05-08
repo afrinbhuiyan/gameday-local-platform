@@ -37,7 +37,7 @@ This project was created as part of **Assignment-09** to showcase proficiency in
 
 ## 🚀 Key Features
 
-- 🔐 **Firebase Authentication** – User login, register, and protected routes
+- 🔐 **Firebase Authentication** – User login, registration, and protected routes
 - 🧭 **React Router v7** – Nested and dynamic routing
 - 📬 **Newsletter Subscription** – Email input with toast feedback
 - 🎨 **Responsive Design** – Mobile-first layout using Tailwind CSS & DaisyUI
@@ -52,31 +52,33 @@ This project was created as part of **Assignment-09** to showcase proficiency in
 
 ### 🔧 Core Dependencies
 
-| Package              | Purpose                                      |
-|----------------------|----------------------------------------------|
-| `react`              | JavaScript library for building UI           |
-| `react-dom`          | DOM binding for React                        |
-| `react-router`       | Routing library (v7)                         |
-| `firebase`           | Backend-as-a-service (auth, db)              |
-| `react-icons`        | Icon support for UI                          |
-| `react-toastify`     | Beautiful toast notifications                |
-| `react-helmet-async` | Manage document head                         |
-| `swiper`             | Touch slider/carousel                        |
-| `recharts`           | Charts and data visualization                |
-| `framer-motion`      | Declarative animations                       |
+| Package              | Purpose                              |
+| -------------------- | ------------------------------------ |
+| `react`              | JavaScript library for building UI   |
+| `react-dom`          | DOM binding for React                |
+| `react-router`       | Routing library (v7)                 |
+| `firebase`           | Backend-as-a-service (auth, db)      |
+| `react-icons`        | Icon support for UI                  |
+| `react-toastify`     | Toast notifications                  |
+| `react-helmet-async` | Document head manager                |
+| `swiper`             | Carousel/slider for featured content |
+| `recharts`           | Charts and data visualization        |
+| `framer-motion`      | Declarative animations               |
+| `react-spinners`     | Loading spinners                     |
 
 ### 🛠️ Development Tools
 
-| Package               | Purpose                                  |
-|-----------------------|------------------------------------------|
-| `vite`                | Fast build tool                          |
-| `eslint`              | JavaScript linter                        |
-| `@vitejs/plugin-react`| React support for Vite                   |
-| `tailwindcss`         | Utility-first CSS framework              |
-| `daisyui`             | Tailwind UI components                   |
-| `postcss` & `autoprefixer` | CSS processing                      |
+| Package                    | Purpose                          |
+| -------------------------- | -------------------------------- |
+| `vite`                     | Fast frontend tooling            |
+| `eslint`                   | Linting tool                     |
+| `@vitejs/plugin-react`     | React support for Vite           |
+| `tailwindcss`              | Utility-first CSS framework      |
+| `daisyui`                  | Tailwind UI components           |
+| `postcss` & `autoprefixer` | CSS processing                   |
+| `@types/react`             | TypeScript typings for React     |
+| `@types/react-dom`         | TypeScript typings for React DOM |
 
 ---
 
 ## 🏗️ Project Structure
-

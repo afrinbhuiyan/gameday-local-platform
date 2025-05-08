@@ -7,7 +7,6 @@ const Profile = () => {
   const [editUser, setEditUser] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  // Color palette
   const colors = {
     primary: "#4CAF50",   
     primaryLight: "#81C784",

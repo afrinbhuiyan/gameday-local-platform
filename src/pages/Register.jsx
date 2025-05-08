@@ -11,7 +11,6 @@ const Register = () => {
     useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location);
 
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
@@ -30,7 +29,6 @@ const Register = () => {
     const photoURL = e.target.photoURL.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(name, photoURL, email, password);
 
     if (password.length < 6) {
       toast.error("Profile update failed. Please try again.");

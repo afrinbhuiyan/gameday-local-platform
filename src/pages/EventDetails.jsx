@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, useLoaderData } from 'react-router';
+import { ClipLoader } from 'react-spinners';
 
 const EventDetails = () => {
   const { id } = useParams();
@@ -37,11 +38,23 @@ const EventDetails = () => {
   };
 
   if (loading) {
-    return <div className="text-center my-8">Loading event details...</div>;
+    return <div className="flex justify-center items-center h-screen">
+    <ClipLoader 
+      color="#93e77a"
+      size={50}
+      speedMultiplier={0.8}
+    />
+  </div>;
   }
 
   if (!event) {
-    return <div className="text-center my-8">Event not found</div>;
+    return <div className="flex justify-center items-center h-screen">
+    <ClipLoader 
+      color="#93e77a"
+      size={50}
+      speedMultiplier={0.8}
+    />
+  </div>
   }
 
   return (
@@ -115,7 +128,7 @@ const EventDetails = () => {
                 
                 <button
                   type="submit"
-                  className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+                  className="px-6 py-2 bg-[#93e77a] rounded hover:bg-[#87c781] transition-colors"
                 >
                   Reserve Seat
                 </button>

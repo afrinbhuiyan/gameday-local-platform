@@ -10,6 +10,7 @@ import PrivateRoute from "../provider/PrivateRoute";
 import Profile from "../pages/Profile";
 import Dashboard from "../pages/Dashboard";
 import ForgotPassword from "../pages/ForgotPassword";
+import { ClipLoader } from "react-spinners";
 
 export const router = createBrowserRouter([
   {
@@ -21,7 +22,13 @@ export const router = createBrowserRouter([
         index: true,
         Component: Home,
         loader: () => fetch("../events.json"),
-        hydrateFallbackElement: <p>Loading...</p>,
+        hydrateFallbackElement:  <div className="flex justify-center items-center h-screen">
+        <ClipLoader 
+          color="#93e77a"
+          size={50}
+          speedMultiplier={0.8}
+        />
+      </div>,
       },
       {
         path: "/register",
@@ -39,7 +46,13 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: () => fetch("../events.json"),
-        hydrateFallbackElement: <p>Loading...</p>,
+        hydrateFallbackElement: <div className="flex justify-center items-center h-screen">
+        <ClipLoader 
+          color="#93e77a"
+          size={50}
+          speedMultiplier={0.8}
+        />
+      </div>,
       },
       {
         path: "/features",
@@ -61,7 +74,13 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: () => fetch("../events.json"),
-        hydrateFallbackElement: <p>Loading...</p>,
+        hydrateFallbackElement: <div className="flex justify-center items-center h-screen">
+        <ClipLoader 
+          color="#93e77a"
+          size={50}
+          speedMultiplier={0.8}
+        />
+      </div>,
       },
       {
         path: "/forgotPassword",
