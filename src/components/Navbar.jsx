@@ -2,7 +2,6 @@ import { Link, NavLink } from "react-router";
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { motion } from "framer-motion";
-console.log(motion);
 import {
   FaVolleyballBall,
   FaUser,
@@ -191,7 +190,6 @@ const Navbar = () => {
                   Sign out
                 </motion.button>
 
-                {/* Mobile menu button */}
                 <button
                   onClick={toggleMobileMenu}
                   className="md:hidden ml-4 p-2 rounded-md text-gray-700 hover:text-green-600 focus:outline-none"
@@ -201,7 +199,7 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                <Link to="/login" className="hidden lg:flex">
+                <Link to="/login" className="hidden md:flex">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -222,11 +220,10 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
       <div
         className={`md:hidden bg-white ${mobileMenuOpen ? "block" : "hidden"}`}
       >
-        <ul className="px-2 py-3 space-y-2">
+        <ul className="px-2 py-3 space-y-2 bg-black">
           {navLinks}
           {!user && (
             <li>

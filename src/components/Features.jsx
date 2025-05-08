@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Helmet } from "react-helmet-async";
 import {
   FaRunning,
   FaTrophy,
@@ -56,9 +55,6 @@ const Features = () => {
 
   return (
     <section className="py-16 bg-gradient-to-br from-gray-100 to-gray-50 relative overflow-hidden">
-      <Helmet>
-        <title>GameDay | Features</title>
-      </Helmet>
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
         <div className="absolute -top-20 -left-20 w-64 h-64 rounded-full bg-emerald-100 opacity-30 mix-blend-multiply"></div>
         <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-blue-100 opacity-30 mix-blend-multiply"></div>

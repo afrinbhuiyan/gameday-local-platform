@@ -303,10 +303,10 @@ const SportsEventCard = ({ event, isFavorite, toggleFavorite }) => {
         </div>
         <Link
           to={`/eventDetails/${event.id}`}
-          class="relative inline-flex items-center justify-center px-10 py-2 w-full overflow-hidden font-mono font-medium tracking-tighter text-black hover:text-white bg-[#9ce979] rounded-lg group"
+          className="relative inline-flex items-center justify-center px-10 py-2 w-full overflow-hidden font-mono font-medium tracking-tighter text-black hover:text-white bg-[#9ce979] rounded-lg group"
         >
-          <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-black rounded-full group-hover:w-96 group-hover:h-96"></span>
-          <span class="relative">View More</span>
+          <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-black rounded-full group-hover:w-96 group-hover:h-96"></span>
+          <span className="relative">View More</span>
         </Link>
       </div>
       {event.isFeatured && (

@@ -12,7 +12,6 @@ const ForgotPassword = () => {
   const emailRef = useRef();
   const [email, setEmail] = useState("");
 
-  // Pre-fill email if coming from login page
   useEffect(() => {
     if (location.state?.email) {
       emailRef.current.value = location.state.email;
@@ -53,13 +52,41 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-t from-[#76b852] to-[#70b66a]">
+    <div className="min-h-screen relative overflow-hidden flex items-center justify-center bg-gradient-to-t from-[#76b852] to-[#70b66a]">
       <Helmet>
         <title>GameDay | Forgot Password</title>
         <meta name="description" content="Reset your GameDay account password" />
       </Helmet>
+      <ul className="absolute top-0 left-0 w-full h-full z-0">
+        {[...Array(10)].map((_, i) => (
+          <li
+            key={i}
+            className={`absolute list-none block bg-[#ffffff31] bg-opacity-15 rounded-full bottom-[-160px] animate-float ${
+              i === 1
+                ? "w-20 h-20 left-[20%] animation-delay-2000 animation-duration-17000"
+                : i === 2
+                ? "left-[25%] animation-delay-4000"
+                : i === 3
+                ? "w-16 h-16 left-[40%] animation-duration-22000 bg-opacity-25"
+                : i === 4
+                ? "left-[70%]"
+                : i === 5
+                ? "w-32 h-32 left-[80%] animation-delay-3000 bg-opacity-20"
+                : i === 6
+                ? "w-40 h-40 left-[32%] animation-delay-7000"
+                : i === 7
+                ? "w-5 h-5 left-[55%] animation-delay-15000 animation-duration-40000"
+                : i === 8
+                ? "w-2.5 h-2.5 left-[25%] animation-delay-2000 animation-duration-40000 bg-opacity-30"
+                : i === 9
+                ? "w-40 h-40 left-[90%] animation-delay-11000"
+                : "w-10 h-10 left-[10%]"
+            }`}
+          ></li>
+        ))}
+      </ul>
 
-      <div className="max-w-md w-full bg-[#ffffff18] backdrop-blur-sm rounded-lg shadow-lg overflow-hidden p-6 sm:p-8">
+      <div className="max-w-md w-full bg-[#0505052d] bg-opacity-10 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden p-6 sm:p-8">
         <h1 className="text-2xl font-bold text-white mb-6 text-center">
           Reset Your Password
         </h1>

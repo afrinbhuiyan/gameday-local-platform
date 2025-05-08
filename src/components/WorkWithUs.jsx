@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { FaPaperPlane, FaUserPlus } from "react-icons/fa";
-console.log(motion)
 
 const WorkWithUs = () => {
   return (

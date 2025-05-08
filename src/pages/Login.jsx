@@ -3,14 +3,15 @@ import { Link, useLocation, useNavigate } from "react-router";
 import { IoLogoGoogle } from "react-icons/io";
 import { AuthContext } from "../provider/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-// import { toast } from "react-toastify";
+import { toast } from "react-toastify";
+
 import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { loginUser, googleLogin } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location);
+  const [error, setError] = useState("");
 
   const emailRef = useRef();
 
@@ -31,7 +32,8 @@ const Login = () => {
         navigate(location?.state || "/");
       })
       .catch((error) => {
-        console.error("Login error:", error.message);
+        setError(error.message);
+        toast.error("Login failed. Please try again.");
       });
   };
 
@@ -41,26 +43,9 @@ const Login = () => {
         navigate(location?.state || "/");
       })
       .catch((error) => {
-        console.error("Google login error:", error.message);
+        setError("Google login error:", error.message);
       });
   };
-
-  // const handleForgotPassword = () => {
-  //   console.log(emailRef.current.value);
-  //   const email = emailRef.current.value;
-  //   resetPassword(email)
-  //     .then(() => {
-  //       toast.success(
-  //         `A password reset link has been sent to ${email}. Please check your inbox.`
-  //       );
-  //     })
-  //     .catch((error) => {
-  //       console.log("Password reset error:", error.message);
-  //       toast.error(
-  //         "Failed to send reset email. Please check the email address and try again."
-  //       );
-  //     });
-  // };
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-t from-[#76b852] to-[#70b66a] font-roboto">
@@ -103,6 +88,11 @@ const Login = () => {
 
         <div className="max-w-md mx-auto bg-[#0505052d] bg-opacity-10 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden">
           <div className="p-6 sm:p-8">
+          <p>
+          {error && (
+            <div className="text-red-600 mb-5 rounded-lg text-sm">{error}</div>
+          )}
+        </p>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <input
@@ -140,10 +130,7 @@ const Login = () => {
                   Password
                 </span>
                 <p className="text-white hover:underline font-medium text-sm mt-5">
-                  <Link
-                    to="/forgotPassword"
-                    className="cursor-pointer"
-                  >
+                  <Link to="/forgotPassword" className="cursor-pointer">
                     Forgot password?
                   </Link>
                 </p>
@@ -157,7 +144,7 @@ const Login = () => {
             </form>
 
             <p className="mt-6 text-center text-white text-sm font-light">
-              Don't have an account?{" "}
+              Don't have an account?
               <Link
                 to="/register"
                 className="text-white font-medium hover:text-green-200 transition-colors duration-500"

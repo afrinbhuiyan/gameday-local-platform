@@ -16,9 +16,9 @@ const Footer = () => {
   return (
     <footer className="bg-black text-gray-300 py-8 md:py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Top Section */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
-          {/* Brand Info */}
+
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-10">
+
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center gap-2">
               <span className="text-2xl md:text-3xl font-bold text-white mb-3 md:mb-4 playWrite">
@@ -37,7 +37,7 @@ const Footer = () => {
             </Link>
           </div>
 
-          {/* Navigation Links */}
+
           <div className="grid grid-cols-2 gap-8">
             <div>
               <h3 className="text-white font-semibold mb-4">Quick Links</h3>
@@ -101,7 +101,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Newsletter Subscription */}
           <div>
             <h3 className="text-white font-semibold mb-4">
               Newsletter Subscription
@@ -109,7 +108,7 @@ const Footer = () => {
             <p className="text-gray-400 mb-4">
               Stay updated with our latest events and offers
             </p>
-            <form onSubmit={handleSubscribe} className="flex">
+            <form onSubmit={handleSubscribe} className="md:flex">
               <input
                 type="email"
                 name="email"
@@ -127,7 +126,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Section */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-500 mb-4 md:mb-0">
             © {new Date().getFullYear()} GameDay Local. All rights reserved.

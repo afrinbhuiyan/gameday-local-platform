@@ -7,7 +7,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { FaCalendarAlt, FaMapMarkerAlt, FaUsers } from "react-icons/fa";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
-console.log(motion)
 
 const eventSlides = [
   {
@@ -148,7 +147,6 @@ const EventSlider = () => {
             <SlArrowRight className="text-[15px] md:text-[20px] lg:text-[30px]" />
           </button>
         </div>
-        {/* Scrolling indicator */}
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 animate-bounce hidden lg:block">
           <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
             <div className="w-1 h-2 bg-white mt-2 rounded-full"></div>
