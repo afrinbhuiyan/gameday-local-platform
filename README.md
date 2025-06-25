@@ -7,9 +7,7 @@
 
 ## 🖼️ Project Preview
 
-<p>
-<img src="banner.png" />
-</p>
+![Banner](https://raw.githubusercontent.com/afrinbhuiyan/gameday-local-platform/main/public/banner.png)
 
 ---
 
