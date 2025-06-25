@@ -1,85 +1,114 @@
+
 # 🎮 GameDay Local
 
-GameDay Local is a responsive and interactive **frontend-only** web application designed to explore, organize, and promote local sports events. Built using modern tools like **React, Firebase, and Vite**, this project focuses on clean UI/UX, dynamic routing, and animations.
+**GameDay Local** is a responsive, interactive frontend-only web app focused on helping users discover, explore, and engage with local sports events. Built using **React**, **Firebase**, **Vite**, and **TailwindCSS**, this app provides smooth animations, protected routes, and a great user experience.
 
 ---
 
-## 👩‍💻 Mst Afrin
+## 🖼️ Project Preview
 
-**Fullstack Developer | React | Firebase | Node.js**  
-📍 **Dhaka, Bangladesh**  
-✉️ **afrin.dev.bd@gmail.com**
-
----
-
-## 🚀 About Me
-
-I am a passionate fullstack developer who enjoys creating interactive, user-friendly applications. My expertise lies in **React, Firebase, TailwindCSS, and Node.js**. Currently, I'm exploring backend tools like **Mongoose** to model MongoDB data effectively.
-
-### 💼 Currently Involved In:
-
-- 🚧 Building a **tourism booking website** using **Next.js**
-- 🌱 Learning **Mongoose** for MongoDB data modeling
-- 🤝 Open to collaborate on **fullstack or AI-integrated web projects**
-- 🎨 I often sketch UI ideas before turning them into code
+<p>
+<img src="banner.png" />
+</p>
 
 ---
 
-## ⚙️ Tech Stack
+## 🌐 Live Link
 
-### 🔷 Frontend
-
-![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=black)
-![Vite](https://img.shields.io/badge/-Vite-646CFF?logo=vite&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/-TailwindCSS-06B6D4?logo=tailwindcss)
-![DaisyUI](https://img.shields.io/badge/-DaisyUI-4B5563?logo=daisyui&logoColor=white)
-
-### 🔶 Backend & Auth
-
-![Firebase](https://img.shields.io/badge/-Firebase-FFCA28?logo=firebase&logoColor=black)
-
-### 🛠️ Tools
-
-![Framer Motion](https://img.shields.io/badge/-Framer%20Motion-EF0179?logo=framer&logoColor=white)
-![Recharts](https://img.shields.io/badge/-Recharts-FF4A00?logo=recharts&logoColor=white)
-![Swiper](https://img.shields.io/badge/-Swiper-6332F6?logo=swiper&logoColor=white)
-![React Toastify](https://img.shields.io/badge/-ReactToastify-1E1E1E?logo=react&logoColor=white)
-![VS Code](https://img.shields.io/badge/-VSCode-007ACC?logo=visual-studio-code&logoColor=white)
-![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github)
+👉 [Live Website](https://starlit-nougat-c89c38.netlify.app/)  
 
 ---
 
-## 🌐 Connect With Me
+## 🛠️ Main Technologies Used
 
-[![GitHub](https://img.shields.io/badge/-GitHub-181717?logo=github)](https://github.com/afrinbhuiyan)
-[![Facebook](https://img.shields.io/badge/-Facebook-1877F2?logo=facebook&logoColor=white)](https://facebook.com/yourusername)
-[![Instagram](https://img.shields.io/badge/-Instagram-E4405F?logo=instagram&logoColor=white)](https://instagram.com/yourusername)
-
----
-
-## 📊 GitHub Stats
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=afrinbhuiyan&show_icons=true&theme=radical)  
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=afrinbhuiyan&layout=compact&theme=radical)  
-![GitHub Streak](https://streak-stats.demolab.com?user=afrinbhuiyan&theme=radical)
+- **React** – Component-based UI library
+- **Vite** – Fast build tool for frontend
+- **Firebase** – Authentication and backend services
+- **Tailwind CSS** – Utility-first CSS framework
+- **DaisyUI** – UI components for Tailwind
+- **Framer Motion** – Declarative animations
+- **Recharts** – Data visualizations
+- **Swiper.js** – Sliders and carousels
 
 ---
 
-# 📌 Pinned Repositories
+## 🚀 Main Features
 
-### 🏅 GameDay Local
+- 🔐 **Firebase Authentication** – User login, registration, and route protection
+- 🔎 **Search and Filter** – Quickly find relevant events
+- 🖼 **Event Cards** – Display event info beautifully
+- 🎨 **Responsive Design** – Fully optimized for mobile and desktop
+- ✨ **Animations** – Smooth transitions using Framer Motion
+- 📊 **Charts** – Visualized stats with Recharts
+- 🧩 **Reusable Components** – Header, Footer, Layouts, etc.
 
-> A local event discovery platform focused on sports.
+---
 
-- 🔗 [Live Site](https://starlit-nougat-c89c38.netlify.app/)
-- 🛠️ **Tech Stack:** React, TailwindCSS, Firebase, DaisyUI, Framer Motion, Recharts, Swiper
-- 🔒 **Features:** Protected routes, animated UI, responsive design, filter/search functionality
+## 📦 Key Dependencies
 
-#### ▶ How to Run Locally:
+| Package              | Purpose                              |
+|----------------------|--------------------------------------|
+| `react`              | UI library                           |
+| `react-dom`          | DOM rendering                        |
+| `react-router-dom`   | Page routing                         |
+| `firebase`           | Authentication backend               |
+| `tailwindcss`        | CSS styling                          |
+| `daisyui`            | UI components                        |
+| `framer-motion`      | Animations                           |
+| `react-toastify`     | Notification toasts                  |
+| `recharts`           | Charts and graphs                    |
+| `swiper`             | Sliders and carousels                |
 
+---
+
+
+## 💻 How to Run This Project Locally
+
+1. **Clone the Repository**
 ```bash
 git clone https://github.com/afrinbhuiyan/gameday-local-platform.git
+```
+
+2. **Navigate to the Project**
+```bash
 cd gameday-local-platform
+```
+
+3. **Install Dependencies**
+```bash
 npm install
+```
+
+4. **Run the Development Server**
+```bash
 npm run dev
 ```
+
+> 🌐 Open `http://localhost:5173` in your browser.
+
+---
+
+## 📈 Relevant Stats
+
+- 🔄 GitHub Contributions
+- 💬 Language Usage Breakdown
+- 🔥 GitHub Streak
+
+*(Optional — add using GitHub Stats APIs if you'd like)*
+
+---
+
+## 🧠 Author
+
+**Mst Afrin**  
+📍 Dhaka, Bangladesh  
+✉️ mstafrinbhuiyan@gmail.com  
+🔗 [GitHub](https://github.com/afrinbhuiyan)
+
+---
+
+✅ *Feel free to fork or contribute to this project. Pull requests are welcome!*
+
+---
+
+© 2025 **Mst Afrin** — Built with ❤️ and React
